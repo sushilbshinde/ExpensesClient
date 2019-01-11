@@ -13,21 +13,27 @@ import { HttpClientModule } from '@angular/common/http';
 
 //material design
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material';
-import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule, MatInputModule, MatCardModule, MatSelectModule, MatTableModule} from '@angular/material';
+import { NewEntryComponent } from './new-entry/new-entry.component';
+
+//forms
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     EntriesComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    NewEntryComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,MatButtonModule,MatTableModule,
+    HttpClientModule,
     //material design
-    BrowserAnimationsModule,
+    BrowserAnimationsModule, MatButtonModule, MatTableModule,
+    MatInputModule, MatCardModule, MatSelectModule,
+    ReactiveFormsModule,
     AppRouterModule
   ],
   providers: [EntryService],
