@@ -12,8 +12,8 @@ import { AppRouterModule } from './app-router.module';
 import { HttpClientModule } from '@angular/common/http';
 
 //material design
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatInputModule, MatCardModule, MatSelectModule, MatTableModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatInputModule, MatCardModule, MatSelectModule, MatTableModule, MatToolbarModule } from '@angular/material';
 import { NewEntryComponent } from './new-entry/new-entry.component';
 
 //forms
@@ -32,7 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     //material design
     BrowserAnimationsModule, MatButtonModule, MatTableModule,
-    MatInputModule, MatCardModule, MatSelectModule,
+    MatInputModule, MatCardModule, MatSelectModule, MatToolbarModule,
+
     ReactiveFormsModule,
     AppRouterModule
   ],

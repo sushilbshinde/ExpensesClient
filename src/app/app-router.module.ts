@@ -9,7 +9,7 @@ import {RouterModule, Routes} from '@angular/router';
  //route
 const routes:Routes = [
     {path:'',component:EntriesComponent},
-    {path:'entry',component:EntriesComponent},
+    {path:'entries',component:EntriesComponent},
     {path:'new-entry',component:NewEntryComponent},
 ]
 
