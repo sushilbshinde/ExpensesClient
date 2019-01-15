@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Inject } from '@angular/core';
 
 @Component({
   selector: 'app-update-entry',
@@ -7,7 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateEntryComponent implements OnInit {
 
-  constructor() { }
+  form:FormGroup;
+  id:number;
+  constructor(private fb:FormBuilder,
+              private dialogRef: MatDialogRef<UpdateEntryComponent>,
+              @Inject(MAT_DIALOG_DATA) {Description, IsExpense, Value, Id}) { 
+                this.id = Id;
+                
+                this.form = fb.group({
+                  description: [Description, Validators.required],
+                  isExpense: [IsExpense, Validators.required],
+                  value: [Value, Validators.required],
+                });
+  }
 
   ngOnInit() {
   }
