@@ -23,7 +23,7 @@ export class NewEntryComponent {
     value: new FormControl('', [Validators.required, Validators.pattern('\\d+\\.?\\d*')])
   });
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.entryForm.value);
     this.service.createEntry(this.entryForm.value).subscribe((data) => {
       console.log('Data - ',data);
