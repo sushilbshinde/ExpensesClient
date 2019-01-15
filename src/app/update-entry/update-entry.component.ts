@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { Inject } from '@angular/core';
+import { Type } from '../Interfaces/Type';
 
 @Component({
   selector: 'app-update-entry',
@@ -22,6 +22,19 @@ export class UpdateEntryComponent implements OnInit {
                   isExpense: [IsExpense, Validators.required],
                   value: [Value, Validators.required],
                 });
+  }
+
+  types: Type[] = [
+    {value:true, display: 'Expense'},
+    {value:false, display: 'Income'},
+  ]
+
+  close(){
+    console.log("close clicked");
+  }
+
+  save() {
+    console.log("save clicked");
   }
 
   ngOnInit() {
