@@ -7,7 +7,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 
 //services
-import { EntryService } from './entry.service'
+import { EntryService } from './entry.service';
+import { AuthService } from './auth.service';
 import { AppRouterModule } from './app-router.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -43,7 +44,7 @@ import { DeleteEntryComponent } from './delete-entry/delete-entry.component';
     AppRouterModule
   ],
   entryComponents: [UpdateEntryComponent],
-  providers: [EntryService],
+  providers: [EntryService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
