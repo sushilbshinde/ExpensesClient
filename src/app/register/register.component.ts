@@ -19,13 +19,15 @@ export class RegisterComponent {
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
     }, { validator: matchingFields('password', 'confirmPassword')})
-    
+
    }
 
   onSubmit() {
     delete this.registerForm.value.confirmPassword;
-    this.service.register(this.registerForm.value).subscribe((data)=>{
+    this.service.register(this.registerForm.value).subscribe((data:any)=>{
       console.log(data);
+      localStorage.setItem('userName',data.UserName);
+      localStorage.setItem('token_value',data.Token);
     })
   }
 
