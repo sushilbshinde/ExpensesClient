@@ -9,13 +9,16 @@ import { AuthService } from '../auth.service';
 export class LoginComponent {
 
   loginData = {
-    username:'',
+    userName:'',
     password:'',
   }
 
   constructor(private service:AuthService) { }
 
   login(){
+    this.service.login(this.loginData).subscribe((data)=>{
+      console.log(data);
+    });
     console.log(this.loginData);
   }
 }
