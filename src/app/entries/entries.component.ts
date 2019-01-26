@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EntryService } from '../entry.service';
-import { MatTableDataSource, MatDialog, MatSort } from '@angular/material';
+import { MatTableDataSource, MatDialog, MatSort, MatPaginator } from '@angular/material';
 import { EntryElement } from '../Interfaces/EntryElement';
 import { UpdateEntryComponent } from '../update-entry/update-entry.component';
 import { ViewChild } from '@angular/core';
@@ -16,6 +16,7 @@ export class EntriesComponent implements OnInit {
   dataSource;
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   
   constructor(private service:EntryService,
               private dialog:MatDialog) { }
@@ -24,6 +25,7 @@ export class EntriesComponent implements OnInit {
     this.service.getAll().subscribe((data) => {
       console.log('Result -', data);
       this.dataSource = new MatTableDataSource<EntryElement>(data as EntryElement[]);
+      this.dataSource.paginator = this.paginator;
     })
   }
 

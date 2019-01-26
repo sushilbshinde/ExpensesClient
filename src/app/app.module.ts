@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatInputModule, MatCardModule, MatSelectModule, 
   MatTableModule, MatToolbarModule, MatDialogModule, MatListModule,
-MatSortModule } from '@angular/material';
+MatSortModule, MatPaginatorModule } from '@angular/material';
 
 //components
 import { NewEntryComponent } from './new-entry/new-entry.component';
@@ -50,7 +50,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     //material design
     BrowserAnimationsModule, MatButtonModule, MatTableModule,
     MatInputModule, MatCardModule, MatSelectModule, MatToolbarModule,
-    MatDialogModule, MatListModule, MatSortModule,
+    MatDialogModule, MatListModule, MatSortModule, MatPaginatorModule,
 
     ReactiveFormsModule, FormsModule,
     AppRouterModule
